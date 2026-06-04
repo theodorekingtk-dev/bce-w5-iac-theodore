@@ -9,7 +9,7 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
-resource "aws_instance" "web" {
+iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
   ami                    = data.aws_ami.amazon_linux.id
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.public.id
